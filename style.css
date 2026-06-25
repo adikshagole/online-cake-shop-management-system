@@ -1,0 +1,143 @@
+body {
+  background: palevioletred;
+  font-family: Arial;
+  margin: 0;
+}
+
+.navbar {
+  background: white;
+  padding: 15px;
+}
+
+.navbar a {
+  color: purple;
+  margin-right: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.btn-group a {
+  margin-right: 10px;
+  color: #ff4d6d;
+}
+
+.delete {
+  color: red;
+}
+
+.success {
+  padding: 10px;
+  background: #c8f7c5;
+  border-left: 6px solid #2ecc71;
+  margin-bottom: 15px;
+}
+
+/* Page title */
+.contact-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
+}
+
+.contact-subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffe6f6;
+  font-size: 18px;
+}
+
+/* White card container */
+.form-container {
+  width: 60%;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* All form elements stacked vertically */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+  color: #d60075;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-group textarea {
+  height: 120px;
+}
+
+/* Submit button */
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: #d60075;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #ff88c6;
+  transform: scale(1.03);
+}
+
+.btn-group a {
+  display: inline-block;
+  padding: 8px 18px;
+  margin: 5px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s ease-in-out;
+}
