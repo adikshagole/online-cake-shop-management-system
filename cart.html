@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>🛒 My Cart</h2>
+
+{% for item in cart_items %}
+<div
+  class="card"
+  style="padding: 10px; border: 1px solid #ccc; margin-bottom: 10px"
+>
+  <p><b>Cake:</b> {{ item.name }}</p>
+  <p><b>Price:</b> ₹{{ item.price }}</p>
+
+  <p>
+    <b>Quantity:</b>
+
+    <a href="{% url 'update_quantity' item.id 'decrease' %}">
+      <button>-</button>
+    </a>
+
+    {{ item.qty }}
+
+    <a href="{% url 'update_quantity' item.id 'increase' %}">
+      <button>+</button>
+    </a>
+  </p>
+
+  <p><b>Total:</b> ₹{{ item.item_total }}</p>
+
+  <a href="{% url 'remove_item' item.id %}">
+    <button style="background: red; color: white">Remove</button>
+  </a>
+</div>
+{% endfor %}
+
+<h3>Grand Total: ₹{{ total }}</h3>
+
+<a href="{% url 'order' %}">
+  <button style="padding: 10px 20px; background: green; color: white">
+    Place Order
+  </button>
+</a>
+
+{% endblock %}

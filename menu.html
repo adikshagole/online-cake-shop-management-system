@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2
+  style="
+    text-align: center;
+    font-size: 30px;
+    font-family: &quot;Georgia&quot;, serif;
+    color: white;
+    margin-top: 30px;
+    text-shadow:
+      0 4px 10px rgba(0, 0, 0, 0.3),
+      0 0 25px #ff60c8;
+  "
+>
+  Our Menu
+</h2>
+
+<div class="card-container">
+  {% for item in items %}
+  <div class="card">
+    {% if item.image %}
+    <img src="{{ item.image.url }}" alt="cake" />
+    {% endif %}
+    <h3>{{ item.name }}</h3>
+    <!-- ⭐ ADD TO CART BUTTON (HERE ADDED) -->
+    <a
+      href="{% url 'add_to_cart' item.id %}"
+      style="
+        display: inline-block;
+        margin-top: 10px;
+        background: #d60075;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+      "
+    >
+      Add to Cart
+    </a>
+
+    <p>{{ item.description }}</p>
+    <span>₹ {{ item.price }}</span>
+  </div>
+  {% endfor %}
+</div>
+
+<div
+  style="display: flex; justify-content: center; gap: 20px; margin-top: 20px"
+>
+  <a
+    href="/order/"
+    onmouseover="
+      this.style.background = '#d60075';
+      this.style.color = 'white';
+    "
+    onmouseout="
+      this.style.background = 'white';
+      this.style.color = '#d60075';
+    "
+    style="
+      background: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      color: #d60075;
+      font-weight: bold;
+      border: 2px solid #d60075;
+      text-decoration: none;
+    "
+  >
+    Order Now
+  </a>
+
+  <a
+    href="/customize/"
+    onmouseover="
+      this.style.background = '#d60075';
+      this.style.color = 'white';
+    "
+    onmouseout="
+      this.style.background = 'white';
+      this.style.color = '#d60075';
+    "
+    style="
+      background: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      color: #d60075;
+      font-weight: bold;
+      border: 2px solid #d60075;
+      text-decoration: none;
+    "
+  >
+    Customize
+  </a>
+</div>
+
+{% endblock %}

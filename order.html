@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %} {% if success %}
+<div class="card">
+  <h3>Order Placed Successfully 🎉</h3>
+  <p><b>Cake:</b> {{ order.item }}</p>
+  <p><b>Quantity:</b> {{ order.quantity }}</p>
+</div>
+{% endif %}
+
+<form method="POST">
+  {% csrf_token %} {{ form.as_p }}
+
+  <button
+    type="submit"
+    style="
+      background: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      color: #d60075;
+      font-weight: bold;
+      border: 2px solid #d60075;
+    "
+  >
+    Place Order
+  </button>
+</form>
+
+<style>
+  .card {
+    width: 700px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .cake-img {
+    width: 300%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+</style>
+{% endblock %}

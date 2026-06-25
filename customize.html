@@ -1,0 +1,119 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2
+  class="contact-title"
+  style="
+    font-size: 30px;
+    font-family: 'Georgia', serif;
+    color: white;
+    margin-top: 30px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 25px #ff60c8;
+  "
+>
+  Get your Customized Cake !
+</h2>
+<p class="contact-subtitle">
+  <b><i>Fill in the details below to design your perfect cake!</i></b>
+</p>
+
+<div class="form-container">
+  <form method="POST">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label><br />Your Name</label>
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter your full name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label><br />Phone Number</label>
+      <input
+        type="text"
+        name="phone"
+        placeholder="Enter your mobile number"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label><br />Email</label>
+      <input type="email" name="email" placeholder="Enter your email id" />
+    </div>
+
+    <div class="form-group">
+      <label><br />Cake Type</label>
+      <select name="cake_type" required>
+        <option value="">Select cake type</option>
+        <option>Birthday Cake</option>
+        <option>Anniversary Cake</option>
+        <option>Wedding Cake</option>
+        <option>Kids Theme Cake</option>
+        <option>Cupcakes</option>
+        <option>Custom Design</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label><br />Cake Flavor</label>
+      <select name="flavor" required>
+        <option value="">Choose flavor</option>
+        <option>Chocolate</option>
+        <option>Vanilla</option>
+        <option>Strawberry</option>
+        <option>Red Velvet</option>
+        <option>Black Forest</option>
+        <option>Butterscotch</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label><br />Weight (in kg)</label>
+      <input type="text" name="weight" placeholder="Ex: 1 kg, 2 kg" required />
+    </div>
+
+    <div class="form-group">
+      <label><br />Delivery Date</label>
+      <input type="date" name="date" required />
+    </div>
+
+    <div class="form-group">
+      <label><br />Special Message on Cake</label>
+      <input type="text" name="message" placeholder="Happy Birthday!" />
+    </div>
+
+    <div class="form-group">
+      <label><br />Additional Customization Details</label>
+      <textarea
+        name="details"
+        placeholder="Describe design theme, colours, toppings, shape etc."
+      ></textarea>
+    </div>
+    <br /><br />
+
+    <button
+      type="submit"
+      class="btn-submit"
+      style="
+        background: white;
+        padding: 14px 32px;
+        border-radius: 30px;
+        color: #d60075;
+        font-weight: bold;
+        border: 2px solid #d60075;
+        text-decoration: none;
+      "
+    >
+      Submit
+    </button>
+    {% if success %}
+    <p style="color: green">Customized Cake Request Submitted Successfully!</p>
+    {% endif %}
+  </form>
+</div>
+
+{% endblock %}
