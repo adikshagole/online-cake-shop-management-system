@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+<div
+  class="container-fluid d-flex justify-content-center">
+  <div class="card p-4 m-5 w-50 h-50 mx-auto">
+    <h1 class="display-3 text-center mb-5">Login Form</h1>
+    {% if messages %}
+    <div>
+      {% for msg in messages %}
+      <div class="alert alert-danger">{{msg}}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <form class="d-flex flex-column gap-2 text-center" method="POST">
+      {% csrf_token %}
+      <input
+        type="text"
+        name="username"
+        type="text"
+        placeholder="Enter Username"
+      /> <br><br>
+      <input
+        type="text"
+        name="password"
+        type="password"
+        placeholder="Enter Password"
+      /> <br><br>
+      <button type="Submit" class="btn btn-sm btn-warning w-100 mt-3">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
